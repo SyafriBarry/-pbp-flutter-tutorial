@@ -196,7 +196,10 @@ class _MyFormPageState extends State<MyFormPage> {
                                 });
                               },
                             ),
-                            SwitchListTile(
+                          ],
+                        ),
+                      ),
+                      SwitchListTile(
                               title: const Text('Practice Mode'),
                               value: _nilaiSwitch,
                               onChanged: (bool value) {
@@ -206,10 +209,6 @@ class _MyFormPageState extends State<MyFormPage> {
                               },
                               secondary: const Icon(Icons.run_circle_outlined),
                             ),
-                            
-                          ],
-                        ),
-                      ),
                       TextButton(
                         child: const Text(
                           "Simpan",
@@ -236,8 +235,26 @@ class _MyFormPageState extends State<MyFormPage> {
                                         Center(child: const Text('Informasi Data')),
                                         SizedBox(height: 20),
                                         Center(
-                                          child: Text('Judul : ' + _namaLengkap)
+                                          child: Text('Judul : ' + _namaLengkap),
+                                          
+                                          
                                         ),
+                                        Center(child: Text('Umur : ' + umur.toString())),
+                                        Center(child: Text('Kelas PBP: '+ kelasPBP)),
+                                        if (jenjangDiploma)
+                                        Center(child: Text('Jenjang: Diploma')),
+                                        if (jenjangSarjana)
+                                        Center(child: Text('Jenjang: Sarjana')),
+                                        if (jenjangMagister)
+                                        Center(child: Text('Jenjang: Magister')),
+                                        if (jenjangDoktor)
+                                        Center(child: Text('Jenjang: Doktor')),
+                                          
+                                        if (_nilaiSwitch) ...[
+                                          Center(child: Text('Practice Mode: ON')),
+                                        ]
+                                        else
+                                        Center(child: Text('Practice Mode: OFF')),
                                         // TODO: Munculkan informasi yang didapat dari form
                                         TextButton(
                                           onPressed: () {
