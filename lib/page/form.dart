@@ -1,5 +1,6 @@
 import 'package:labflutterpbp/main.dart';
 import 'package:flutter/material.dart';
+import 'package:labflutterpbp/page/to_do_page.dart';
 
 
 class MyFormPage extends StatefulWidget {
@@ -49,9 +50,20 @@ class _MyFormPageState extends State<MyFormPage> {
                       );
                     },
                   ),
+                  ListTile(
+                    title: const Text('To Do'),
+                    onTap: () {
+                    // Route menu ke halaman to do
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ToDoPage()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
+            
     
             body: Form(
               key: _formKey,
@@ -236,8 +248,6 @@ class _MyFormPageState extends State<MyFormPage> {
                                         SizedBox(height: 20),
                                         Center(
                                           child: Text('Judul : ' + _namaLengkap),
-                                          
-                                          
                                         ),
                                         Center(child: Text('Umur : ' + umur.toString())),
                                         Center(child: Text('Kelas PBP: '+ kelasPBP)),
@@ -276,6 +286,7 @@ class _MyFormPageState extends State<MyFormPage> {
                 ),
               ),
             ),
+            
           );
       }
 }
